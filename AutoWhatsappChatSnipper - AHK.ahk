@@ -111,6 +111,7 @@ Snip(i)
 	; Type in new file name and save.
 	datetimeNow := A_NOW 
 	FormatTime, dateToday, datetimeNow, yyyy_MM_dd
+	SetInputLanguageToEnglishMalaysia()
 	fileName := % dateToday . "_" . i
 	Send, % fileName
 	Send, {Enter}
@@ -133,4 +134,11 @@ ResetKeyboard()
 	Send, {RShift}
 	Send, {RCtrl}
 	Send, {RAlt}
+}
+
+SetInputLanguageToEnglishMalaysia()
+{
+	languageId := "0x4409"
+    ControlGetFocus, focusControl
+    PostMessage, 0x0050, 0, %languageId%, %focusControl%
 }
