@@ -97,7 +97,7 @@ Snip(i)
 	Send, ^n
 	WinWait, ahk_class Microsoft-Windows-SnipperCaptureForm
 	Sleep, 1000
-	MouseClickDrag, Left, 557, 133, 1080, 718, 0 ; Snip the chat area. (Should be modified based on each specific computer screen case)
+	MouseClickDrag, Left, 315, 122, 1365, 726, 0 ; Snip the chat area. (Should be modified based on each specific computer screen case)
 	WinWaitActive, ahk_class Microsoft-Windows-SnipperEditor
 	Send, ^s
 	MouseMove, 825, 400, 0  ; Move back mouse cursor to the center of the chat history area. (Should be modified based on each specific computer screen case)
@@ -112,7 +112,8 @@ Snip(i)
 	datetimeNow := A_NOW 
 	FormatTime, dateToday, datetimeNow, yyyy_MM_dd
 	SetInputLanguageToEnglishMalaysia()
-	fileName := % dateToday . "_" . i
+	; fileName := % dateToday . "_" . i
+	fileName := % "2025_06_01_" . i
 	Send, % fileName
 	Send, {Enter}
 }
