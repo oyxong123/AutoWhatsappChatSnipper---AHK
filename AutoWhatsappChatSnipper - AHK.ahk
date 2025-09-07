@@ -10,10 +10,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 Prerequisites:
 1. Open whatsapp web and open the chat that you want to snip.
 2. Scroll up manually to the part where the snipping should start.
-3. Download all undownloaded stickers or media that should be included in the snipped images.
-4. Set zoom amount of browser to 50%. (Have only tested on Chrome and on laptop with 1365 x 767 screen size)
-5. Make sure the current cursor focus is not on the typing text area. (If on the typing text area, click on the chat history area to deselect it, otherwise the texting cursor will be present in the snipped images)
-6. Test save a dummy image in the folder that you want the images to be saved in first, then delete it manually before starting the program. (This is to preserve the memory for what folder the 'save as' dialog will open)
+3. Set zoom amount of browser to 50%. (Have only tested on Chrome and on laptop with 1365 x 767 screen size)
+4. Make sure the current cursor focus is not on the typing text area. (If on the typing text area, click on the chat history area to deselect it, otherwise the texting cursor will be present in the snipped images)
+5. Test save a dummy image in the folder that you want the images to be saved in first, then delete it manually before starting the program. (This is to preserve the memory for what folder the 'save as' dialog will open)
 
 Output:
 1. A folder with snipped images that are named based on current date and an index that increments from 1. (eg. 2024_09_11_1)
@@ -62,11 +61,6 @@ StartProgram()
 	while (True)
 	{
 		OpenSnippingTool()
-		/* If not WinExist("ahk_exe SnippingTool.exe")
-		{
-			WinWaitActive, ahk_exe SnippingTool.exe
-		}
-		 */
 		Snip(i)
 		Sleep, 1000
 		Send, !{Tab} ; Switch window to ws web.
@@ -80,7 +74,7 @@ StartProgram()
 			Break
 		}
 		i++
-		Sleep, 3500
+		Sleep, 0 ; Time to determine whether the floating date should be present (currently: present) (3500 for absent).
 	}
 	MsgBox, % "Completed!"
 }
@@ -113,7 +107,7 @@ Snip(i)
 	FormatTime, dateToday, datetimeNow, yyyy_MM_dd
 	SetInputLanguageToEnglishMalaysia()
 	; fileName := % dateToday . "_" . i
-	fileName := % "2025_06_01_" . i
+	fileName := % "2025_08_30_" . i
 	Send, % fileName
 	Send, {Enter}
 }
@@ -123,7 +117,7 @@ ScrollPageDown()
 	Loop, 5 
 	{
 		Send, {WheelDown}
-		Sleep, 200 ; Important to add to ensure consistency in wheel down'ed screen amount.
+		Sleep, 700 ; Important to add to ensure consistency in wheel down'ed screen amount.
 	}
 }
 
