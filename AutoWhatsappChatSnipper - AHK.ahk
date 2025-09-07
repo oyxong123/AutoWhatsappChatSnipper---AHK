@@ -10,7 +10,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 Prerequisites:
 1. Open whatsapp web and open the chat that you want to snip.
 2. Scroll up manually to the part where the snipping should start.
-3. Set zoom amount of browser to 50%. (Have only tested on Chrome and on laptop with 1365 x 767 screen size)
+3. Set zoom amount of browser to 67%. (Have only tested on Chrome and on laptop with 1365 x 767 screen size)
 4. Make sure the current cursor focus is not on the typing text area. (If on the typing text area, click on the chat history area to deselect it, otherwise the texting cursor will be present in the snipped images)
 5. Test save a dummy image in the folder that you want the images to be saved in first, then delete it manually before starting the program. (This is to preserve the memory for what folder the 'save as' dialog will open)
 
@@ -32,12 +32,12 @@ breakLoop := 0
 PrintScreen & o:: ; Hotkey to start the program.
 	CoordMode, Mouse, Screen  ; Sets coordinate mode to base on screen.
 	
-    ; Prompt confirmation dialog to start the snipping process. 
-	MsgBox, 1, Whatsapp Chat Snip Tool, Start?, 
-	IfMsgBox, OK
+    ; Prompt text box for user to enter prefix for file names to start the snipping process. 
+    InputBox, strPrefix, Whatsapp Chat Snip Tool, Enter Prefix: "yyyy_MM_dd", , 210, 125, , , , ,		
+	if !ErrorLevel
 	{
 		breakLoop := 0
-    	StartProgram()
+    	StartProgram(strPrefix)
 	}
 	Return
 
@@ -46,7 +46,7 @@ PrintScreen & o:: ; Hotkey to start the program.
 	Return
 
 ; Functions 
-StartProgram()
+StartProgram(strPrefix)
 {
 	global breakLoop ; Required to access the global variable from a function.
 	; Countdown before program start.
@@ -61,7 +61,7 @@ StartProgram()
 	while (True)
 	{
 		OpenSnippingTool()
-		Snip(i)
+		Snip(i, strPrefix)
 		Sleep, 1000
 		Send, !{Tab} ; Switch window to ws web.
 		Sleep, 1000
@@ -74,7 +74,7 @@ StartProgram()
 			Break
 		}
 		i++
-		Sleep, 0 ; Time to determine whether the floating date should be present (currently: present) (3500 for absent).
+		Sleep, 200 ; Time to determine whether the floating date should be present (currently: present) (3500 for absent).
 	}
 	MsgBox, % "Completed!"
 }
@@ -86,12 +86,12 @@ OpenSnippingTool()
 	Return
 }
 
-Snip(i)
+Snip(i, strPrefix)
 {
 	Send, ^n
 	WinWait, ahk_class Microsoft-Windows-SnipperCaptureForm
 	Sleep, 1000
-	MouseClickDrag, Left, 315, 122, 1365, 726, 0 ; Snip the chat area. (Should be modified based on each specific computer screen case)
+	MouseClickDrag, Left, 420, 122, 1365, 726, 0 ; Snip the chat area. (Should be modified based on each specific computer screen case)
 	WinWaitActive, ahk_class Microsoft-Windows-SnipperEditor
 	Send, ^s
 	MouseMove, 825, 400, 0  ; Move back mouse cursor to the center of the chat history area. (Should be modified based on each specific computer screen case)
@@ -107,7 +107,7 @@ Snip(i)
 	FormatTime, dateToday, datetimeNow, yyyy_MM_dd
 	SetInputLanguageToEnglishMalaysia()
 	; fileName := % dateToday . "_" . i
-	fileName := % "2025_08_30_" . i
+	fileName := % strPrefix . "_" . i
 	Send, % fileName
 	Send, {Enter}
 }
