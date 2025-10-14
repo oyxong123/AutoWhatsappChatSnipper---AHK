@@ -33,13 +33,13 @@ Contributions, issues, and pull requests are welcomed!
 ## Usage
 1. Open **Snipping Tool**.
 <p align="center">
-   <img width="160" height="69" alt="image" src="https://github.com/user-attachments/assets/380c8ef4-f878-4289-b347-81be02059d6c" />
+   <img width="120" height="52" alt="image" src="https://github.com/user-attachments/assets/380c8ef4-f878-4289-b347-81be02059d6c" />
 </p>
 
 2. Snip a random screenshot.
 3. Save the image in the directory that you want the program to save in later.
 <p align="center">
-    <img width="661" height="491" alt="image" src="https://github.com/user-attachments/assets/d62f2790-b719-466f-b14b-50c46299249e" />
+    <img width="495" height="367" alt="image" src="https://github.com/user-attachments/assets/d62f2790-b719-466f-b14b-50c46299249e" />
 </p>
 
 4. Delete the image from the directory.
@@ -84,7 +84,7 @@ Contributions, issues, and pull requests are welcomed!
 
 13. Check the directory that you have set to see the captured screenshots.
 <p align="center">
-    <img width="788" height="476" alt="image" src="https://github.com/user-attachments/assets/41e11014-46a4-4e3b-94cf-826aa731962c" />
+    <img width="591" height="357" alt="image" src="https://github.com/user-attachments/assets/41e11014-46a4-4e3b-94cf-826aa731962c" />
 </p>
 
 ## Future Roadmap
