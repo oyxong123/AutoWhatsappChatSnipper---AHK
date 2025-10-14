@@ -1,4 +1,8 @@
 # Auto Whatsapp Chat Snipper
+<p align="center">
+    <img width="246" height="42" alt="image" src="https://github.com/user-attachments/assets/a8d506bd-5d43-4c93-988b-8d6de5a544fc" />
+</p>
+
 Auto Whatsapp Chat Snipper is an AHK script that automatically captures sequential screenshots of WhatsApp Web Chat 
 and saves them with date-indexed file names into a specified directory.
 
@@ -28,22 +32,30 @@ Contributions, issues, and pull requests are welcomed!
 
 ## Usage
 1. Open **Snipping Tool**.
+<p align="center">
+   <img width="160" height="69" alt="image" src="https://github.com/user-attachments/assets/380c8ef4-f878-4289-b347-81be02059d6c" />
+</p>
+
 2. Snip a random screenshot.
 3. Save the image in the directory that you want the program to save in later.
-4. Delete the image from the directory.
-5. Open **WhatsApp Web** through **Chrome** and open the chat that you want to capture.
 <p align="center">
-   
+    <img width="661" height="491" alt="image" src="https://github.com/user-attachments/assets/d62f2790-b719-466f-b14b-50c46299249e" />
+</p>
+
+4. Delete the image from the directory.
+5. Open **WhatsApp Web** through **Chrome**, then open the chat that you want to capture.
+<p align="center">
+   <img width="682" height="301" alt="image" src="https://github.com/user-attachments/assets/8ab0c99b-1718-4d94-b0d4-2f817b02c96a" />
 </p>
 
 6. Scroll up or search up the point where you want the capturing process to start.
 <p align="center">
-   
+   <img width="471" height="302" alt="image" src="https://github.com/user-attachments/assets/8bb20ec3-dc10-4efc-99ac-5a535a1592be" />
 </p>
 
 7. Set the zoom of the browser to 67%.
 <p align="center">
-   
+   <img width="291" height="93" alt="image" src="https://github.com/user-attachments/assets/7053952a-9a38-47fd-b2df-690b9f7289bf" />
 </p>
 
 8. Click on a blank area of the page to ensure no buttons, text fields, or other elements are focused. 
@@ -53,10 +65,27 @@ Contributions, issues, and pull requests are welcomed!
 
 9. Press `PrtSc+O`.
 <p align="center">
-   
+   <img width="219" height="129" alt="image" src="https://github.com/user-attachments/assets/93f3fbcd-c49a-4fb1-8200-17e3be3a8bd5" />
 </p>
 
-10. 
+10. Enter the prefix for the file names such as `yyyy_MM_dd`, then press `Enter` or click on **OK** to start the program.
+    (Any prefix would work.
+    The program will just add `_ScreenshotNumber.JPG` after it.)
+<p align="center">
+   <img width="209" height="127" alt="image" src="https://github.com/user-attachments/assets/7bc53d6e-5802-4e12-86ae-c8e72d5d1cba" />
+</p>
+
+11. After hearing 5 beeps, the program will start the capturing process.
+12. To stop the program, press `Backspace` once when the program is scrolling.
+    The program will stop after it finished scrolling.
+<p align="center">
+   <img width="281" height="146" alt="image" src="https://github.com/user-attachments/assets/23a7ed75-1f0c-478d-a064-88436ea5518f" />
+</p>
+
+13. Check the directory that you have set to see the captured screenshots.
+<p align="center">
+    <img width="788" height="476" alt="image" src="https://github.com/user-attachments/assets/41e11014-46a4-4e3b-94cf-826aa731962c" />
+</p>
 
 ## Future Roadmap
 #### Possible new features:
@@ -66,6 +95,8 @@ Contributions, issues, and pull requests are welcomed!
 #### Possible improvements and bug fixes:
 - Instead of manually snipping an image in the beginning to select the directory that the program will save its captured screenshots in,
   implement some way to select a directory in the initializing popup.
+- Standardize the names used throughout the program.
+- Update comments in the code.
 
 ## Extra Notes
 The problem with this program is that it is dependent on the GUI design and behaviour of WhatsApp Web, which updates every once in a while. 
