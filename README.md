@@ -33,7 +33,7 @@ Contributions, issues, and pull requests are welcomed!
 ## Usage
 1. Open **Snipping Tool**.
 <p align="center">
-   <img width="120" height="52" alt="image" src="https://github.com/user-attachments/assets/380c8ef4-f878-4289-b347-81be02059d6c" />
+   <img width="160" height="69" alt="image" src="https://github.com/user-attachments/assets/380c8ef4-f878-4289-b347-81be02059d6c" />
 </p>
 
 2. Snip a random screenshot.
